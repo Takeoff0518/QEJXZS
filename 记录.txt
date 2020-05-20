@@ -1,0 +1,21 @@
+开机自动启动：HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+数据存取：HKEY_CURRENT_USER\Software\VB and VBA Program Settings
+路径：app.path & "\" & app.exename
+
+SaveSetting appname, section, key, setting
+SaveSetting 语句的语法具有下列命名参数：
+部分 描述
+appname 必要。字符串表达式，包含应用程序或工程的名称，对这些应用程序或工程使用设置
+section 必要。字符串表达式，包含区域名称，在该区域保存注册表项设置。
+key 必要。字符串表达式，包含将要保存的注册表项设置的名称。
+setting 必要。表达式，包含 key 的设置值。
+
+GetSetting(appname, section, key[, default])
+-----------------------------------------------
+GetSetting 函数的语法具有下列命名参数：
+部分 描述
+appname 必要。字符串表达式，包含应用程序或工程的名称，要求这些应用程序或工程有注册表项设置。
+section 必要。字符串表达式，包含区域名称，要求该区域有注册表项设置。
+key 必要。字符串表达式，返回注册表项设置的名称。
+default 可选。表达式，如果注册表项设置中没有设置值，则返回缺省值。如果省略，则 default 取值为长度为零的字符串 ("")。
+七二教学助手
