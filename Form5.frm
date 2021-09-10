@@ -664,9 +664,9 @@ Begin VB.Form Smallplus
    End
    Begin VB.Label Label26 
       BackStyle       =   0  'Transparent
-      Caption         =   " x"
+      Caption         =   "x"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   24
          Charset         =   134
          Weight          =   700
@@ -676,7 +676,7 @@ Begin VB.Form Smallplus
       EndProperty
       ForeColor       =   &H00C0C0C0&
       Height          =   495
-      Left            =   8880
+      Left            =   9000
       TabIndex        =   41
       Top             =   0
       Width           =   495
@@ -693,9 +693,9 @@ Begin VB.Form Smallplus
    End
    Begin VB.Label Label16 
       BackStyle       =   0  'Transparent
-      Caption         =   "抽学号-七二教学助手"
+      Caption         =   "小组加分-七二教学助手"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   12
          Charset         =   134
          Weight          =   700
@@ -792,10 +792,13 @@ Dim pp As String
 
 Dim str As Boolean
 
+Dim password As String
+
 Dim xa As Single, ya As Single
 
 
 Private Sub Form_Load()
+password = GetSetting("QEJXZS", "UserLike", "password")
 b1 = GetSetting("QEJXZS", "Stu", "1", 0)
 b2 = GetSetting("QEJXZS", "Stu", "2", 0)
 b3 = GetSetting("QEJXZS", "Stu", "3", 0)
@@ -820,8 +823,7 @@ Label7.Caption = a5
 Label8.Caption = a6
 Label9.Caption = a7
 Label10.Caption = a8
-Label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
-Close #1
+label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
 str = False
 End Sub
 
@@ -866,10 +868,15 @@ Else
         a8 = a8 + 1
         Label10.Caption = a8
     End If
-    Label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
-    Open "D:\start\text.scrt" For Output As #2
-    Print #2, Label11.Text
-    Close #2
+    label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
+    SaveSetting "QEJXZS", "Stu", "1", a1
+    SaveSetting "QEJXZS", "Stu", "2", a2
+    SaveSetting "QEJXZS", "Stu", "3", a3
+    SaveSetting "QEJXZS", "Stu", "4", a4
+    SaveSetting "QEJXZS", "Stu", "5", a5
+    SaveSetting "QEJXZS", "Stu", "6", a6
+    SaveSetting "QEJXZS", "Stu", "7", a7
+    SaveSetting "QEJXZS", "Stu", "8", a8
 End If
 End If
 End Sub
@@ -913,10 +920,14 @@ Else
         a8 = a8 - 1
         Label10.Caption = a8
     End If
-    Label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
-    Open "D:\start\text.scrt" For Output As #2
-    Print #2, Label11.Text
-    Close #2
+    SaveSetting "QEJXZS", "Stu", "1", a1
+    SaveSetting "QEJXZS", "Stu", "2", a2
+    SaveSetting "QEJXZS", "Stu", "3", a3
+    SaveSetting "QEJXZS", "Stu", "4", a4
+    SaveSetting "QEJXZS", "Stu", "5", a5
+    SaveSetting "QEJXZS", "Stu", "6", a6
+    SaveSetting "QEJXZS", "Stu", "7", a7
+    SaveSetting "QEJXZS", "Stu", "8", a8
 End If
 End If
 End Sub
@@ -955,9 +966,9 @@ pp = MsgBox("是否清除?清除后将无法恢复!", vbYesNo + vbExclamation, "警告")
         a8 = a8 + 1
         Label10.Caption = a8
     End If
-    Label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
+    label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
     Open "D:\start\text.scrt" For Output As #2
-    Print #2, Label11.Text
+    Print #2, label11.Text
     Close #2
 If pp = vbYes Then
 a1 = 0
@@ -984,16 +995,22 @@ Label7.Caption = a5
 Label8.Caption = a6
 Label9.Caption = a7
 Label10.Caption = a8
- Label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
-    Open "D:\start\text.scrt" For Output As #2
-    Print #2, Label11.Text
-    Close #2
+ label11.Text = a1 & "," & a2 & "," & a3 & "," & a4 & "," & a5 & "," & a6 & "," & a7 & "," & a8
+   SaveSetting "QEJXZS", "Stu", "1", a1
+    SaveSetting "QEJXZS", "Stu", "2", a2
+    SaveSetting "QEJXZS", "Stu", "3", a3
+    SaveSetting "QEJXZS", "Stu", "4", a4
+    SaveSetting "QEJXZS", "Stu", "5", a5
+    SaveSetting "QEJXZS", "Stu", "6", a6
+    SaveSetting "QEJXZS", "Stu", "7", a7
+    SaveSetting "QEJXZS", "Stu", "8", a8
 End If
 End Sub
 
 Private Sub Label15_Click()
+password = GetSetting("QEJXZS", "UserLike", "password")
 If str = False Then
-    If Text1.Text = "qe72" Or Text1.Text = "qejxzs" Then
+    If Text1.Text = password Then
     Text1.Enabled = False
     str = True
     Label15.Caption = "  注销"

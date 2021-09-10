@@ -100,9 +100,9 @@ Begin VB.Form Bigplus
    End
    Begin VB.Label Label11 
       BackStyle       =   0  'Transparent
-      Caption         =   " x"
+      Caption         =   "x"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   24
          Charset         =   134
          Weight          =   700
@@ -112,7 +112,7 @@ Begin VB.Form Bigplus
       EndProperty
       ForeColor       =   &H00C0C0C0&
       Height          =   495
-      Left            =   8280
+      Left            =   8400
       TabIndex        =   6
       Top             =   0
       Width           =   495
@@ -121,7 +121,7 @@ Begin VB.Form Bigplus
       BackStyle       =   0  'Transparent
       Caption         =   "大组加分-七二教学助手"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   12
          Charset         =   134
          Weight          =   700

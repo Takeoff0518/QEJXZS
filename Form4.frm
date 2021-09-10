@@ -31,6 +31,25 @@ Begin VB.Form Number
       Value           =   32
       Width           =   4335
    End
+   Begin VB.Label Label3 
+      BackStyle       =   0  'Transparent
+      Caption         =   "|10  |20  |30  |40"
+      BeginProperty Font 
+         Name            =   "黑体"
+         Size            =   14.25
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   960
+      TabIndex        =   7
+      Top             =   5880
+      Width           =   3375
+   End
    Begin VB.Shape Shape1 
       BorderColor     =   &H00C0C0C0&
       Height          =   3975
@@ -71,7 +90,7 @@ Begin VB.Form Number
       BackStyle       =   0  'Transparent
       Caption         =   "抽学号-七二教学助手"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   12
          Charset         =   134
          Weight          =   700
@@ -88,9 +107,9 @@ Begin VB.Form Number
    End
    Begin VB.Label Label11 
       BackStyle       =   0  'Transparent
-      Caption         =   " x"
+      Caption         =   "x"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   24
          Charset         =   134
          Weight          =   700
@@ -100,7 +119,7 @@ Begin VB.Form Number
       EndProperty
       ForeColor       =   &H00C0C0C0&
       Height          =   495
-      Left            =   3720
+      Left            =   3840
       TabIndex        =   1
       Top             =   0
       Width           =   495

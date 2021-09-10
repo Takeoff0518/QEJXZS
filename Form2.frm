@@ -18,8 +18,27 @@ Begin VB.Form Home
    WhatsThisHelp   =   -1  'True
    Begin VB.Timer Timer1 
       Interval        =   500
-      Left            =   480
-      Top             =   4560
+      Left            =   0
+      Top             =   4080
+   End
+   Begin VB.Label Label13 
+      BackColor       =   &H00332E2B&
+      Caption         =   "更新信息"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   255
+      Left            =   2520
+      TabIndex        =   12
+      Top             =   4200
+      Width           =   735
    End
    Begin VB.Line Line1 
       BorderColor     =   &H00808080&
@@ -30,9 +49,9 @@ Begin VB.Form Home
    End
    Begin VB.Label Label11 
       BackStyle       =   0  'Transparent
-      Caption         =   " x"
+      Caption         =   "x"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   24
          Charset         =   134
          Weight          =   700
@@ -42,16 +61,16 @@ Begin VB.Form Home
       EndProperty
       ForeColor       =   &H00C0C0C0&
       Height          =   495
-      Left            =   2760
+      Left            =   2880
       TabIndex        =   9
       Top             =   0
       Width           =   495
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
-      Caption         =   "七二教学助手"
+      Caption         =   "七二教学助手-V2.1"
       BeginProperty Font 
-         Name            =   "方正兰亭超细黑简体"
+         Name            =   "黑体"
          Size            =   12
          Charset         =   134
          Weight          =   700
@@ -69,7 +88,6 @@ Begin VB.Form Home
    Begin VB.Label Label10 
       BackStyle       =   0  'Transparent
       Caption         =   "  铃声（优化中）"
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "华文细黑"
          Size            =   14.25
@@ -79,7 +97,7 @@ Begin VB.Form Home
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00FFFFFF&
+      ForeColor       =   &H00808080&
       Height          =   375
       Left            =   600
       TabIndex        =   8
@@ -233,7 +251,7 @@ Begin VB.Form Home
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Beta 1.0 图形版"
+      Caption         =   "V2.1"
       ForeColor       =   &H00E0E0E0&
       Height          =   255
       Left            =   480
@@ -319,7 +337,7 @@ With nidProgramData
 .uFlags = NIF_ICON Or NIF_TIP Or NIF_MESSAGE
 .uCallbackMessage = WM_MOUSEMOVE
 .hIcon = Me.Icon
-.szTip = "七二教学助手 Beta 1.0(单击恢复窗口)" & vbNullChar
+.szTip = "七二教学助手-V2.1(单击恢复窗口)" & vbNullChar
 End With
 Shell_NotifyIcon NIM_ADD, nidProgramData
 End Sub
@@ -355,8 +373,14 @@ End
 End Sub
 '************************************************
 
+
+
 Private Sub Label10_Click()
-Ring.Visible = True
+'Ring.Visible = True
+End Sub
+
+Private Sub Label10_DblClick()
+MsgBox "此功能仍在开发！", vbInformation, "七二教学助手"
 End Sub
 
 Private Sub Label11_Click()
@@ -374,6 +398,10 @@ End Sub
 
 Private Sub Label12_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 If Button = 1 Then Me.Move Me.Left + X - xa, Me.Top + Y - ya
+End Sub
+
+Private Sub Label13_Click()
+MsgBox "七二教学助手-V2.1更新内容：" & vbCrLf & "-修复了因为大屏幕缺少“方正兰亭超细黑简体”导致的关闭叉号消失BUG；" & vbCrLf & "-贴心更新：抽学号修改人数增加标识标签，改人数更加方便。", , "更新内容"
 End Sub
 
 Private Sub Label4_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -408,15 +436,15 @@ End Sub
 Private Sub Timer1_Timer()
 Label1.Caption = "现在时间:" & Time
 Label2.Caption = "现在日期:" & Date
-If Label1.Caption = "现在时间:13:48:40" Then
-Form1.Visible = True
-Label8.Caption = "     安静练字"
-Form1.Label1.ForeColor = RGB(255, 255, 255)
-End If
-If Label1.Caption = "现在时间:13:58:45" Then
-Form1.Visible = False
-Label8.Caption = "        黑屏"
-Form1.Label1.ForeColor = RGB(0, 0, 0)
-End If
+'If Label1.Caption = "现在时间:13:48:40" Then
+'Form1.Visible = True
+'Label8.Caption = "     安静练字"
+'Form1.Label1.ForeColor = RGB(255, 255, 255)
+'End If
+'If Label1.Caption = "现在时间:13:58:45" Then
+'Form1.Visible = False
+'Label8.Caption = "        黑屏"
+'Form1.Label1.ForeColor = RGB(0, 0, 0)
+'End If
 End Sub
 

@@ -42,9 +42,9 @@ Begin VB.Form Stopclock
       Width           =   14775
       Begin VB.Label Label26 
          BackStyle       =   0  'Transparent
-         Caption         =   " x"
+         Caption         =   "x"
          BeginProperty Font 
-            Name            =   "方正兰亭超细黑简体"
+            Name            =   "黑体"
             Size            =   24
             Charset         =   134
             Weight          =   700
@@ -54,7 +54,7 @@ Begin VB.Form Stopclock
          EndProperty
          ForeColor       =   &H00C0C0C0&
          Height          =   495
-         Left            =   8040
+         Left            =   8160
          TabIndex        =   27
          Top             =   0
          Width           =   495
@@ -71,9 +71,9 @@ Begin VB.Form Stopclock
       End
       Begin VB.Label Label25 
          BackStyle       =   0  'Transparent
-         Caption         =   "小组加分-七二教学助手"
+         Caption         =   "计时器-七二教学助手"
          BeginProperty Font 
-            Name            =   "方正兰亭超细黑简体"
+            Name            =   "黑体"
             Size            =   12
             Charset         =   134
             Weight          =   700
@@ -109,6 +109,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command15 
          BackStyle       =   0  'Transparent
          Caption         =   " 停止"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   42
@@ -141,6 +142,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command14 
          BackStyle       =   0  'Transparent
          Caption         =   " 暂停"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   42
@@ -361,6 +363,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command7 
          BackStyle       =   0  'Transparent
          Caption         =   " ↓"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   24
@@ -380,6 +383,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command8 
          BackStyle       =   0  'Transparent
          Caption         =   " ↓"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   24
@@ -399,6 +403,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command10 
          BackStyle       =   0  'Transparent
          Caption         =   " ↓"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   24
@@ -418,6 +423,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command9 
          BackStyle       =   0  'Transparent
          Caption         =   " ↓"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   24
@@ -437,6 +443,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command11 
          BackStyle       =   0  'Transparent
          Caption         =   " ↓"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   24
@@ -456,6 +463,7 @@ Begin VB.Form Stopclock
       Begin VB.Label Command12 
          BackStyle       =   0  'Transparent
          Caption         =   " ↓"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "黑体"
             Size            =   24
